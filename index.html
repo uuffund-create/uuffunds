@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>United Ummah Funeral Funds — community-shared funeral costs</title>
+<meta name="description" content="UUFFUNDS is a member-supported mutual aid fund. Members share the cost of a burial across the community, so no family faces a funeral bill alone.">
+
+<!--
+  ============================================================
+  EDIT BEFORE LAUNCH — every [BRACKETED] item below is a
+  placeholder. Search this file for "[" to find them all.
+
+    [CONTACT EMAIL]          currently set to uuffund@gmail.com
+    [REGION SERVED]          the city / state / area you cover
+    [TYPICAL FUNERAL COST]   local cost you are protecting against
+    [SHARE PER FUNERAL]      approx. amount charged per death
+    [MEMBER COUNT]           only publish once it is accurate
+    [LEGAL NAME]             registered name, if you have one
+    [CHARITY STATUS]         do NOT claim 501(c)(3) until granted
+    [SCHOLAR REVIEW]         only name scholars who agreed
+    [MAILING ADDRESS]        [PHONE]
+
+  Nothing on this page states a fact about your organization
+  that you have not confirmed. Please keep it that way.
+  ============================================================
+-->
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="United Ummah Funeral Funds">
+<meta property="og:description" content="A member-supported fund so no Muslim family faces a funeral bill alone.">
+<meta property="og:url" content="https://ummahfuneral.org/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230f6e63'/><path d='M16 7c-4 0-6.5 3-6.5 6.8V25h13V13.8C22.5 10 20 7 16 7z' fill='none' stroke='white' stroke-width='2.4' stroke-linejoin='round'/></svg>">
+
+<style>
+  :root{
+    --ink:#16181d; --ink-2:#4a5058; --ink-3:#767d87;
+    --line:#e4e7ec; --bg:#fff; --bg-2:#f7f8fa;
+    --accent:#0f6e63; --accent-dark:#0a4f47; --accent-tint:#e9f4f2;
+    --radius:14px;
+    --shadow:0 1px 2px rgba(16,24,40,.04), 0 8px 24px rgba(16,24,40,.06);
+    --wrap:1080px;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:17px; line-height:1.65; letter-spacing:-.005em;
+  }
+  h1,h2,h3{line-height:1.2; letter-spacing:-.022em; margin:0}
+  p{margin:0}
+  a{color:var(--accent-dark)}
+  .wrap{max-width:var(--wrap); margin-inline:auto; padding-inline:22px}
+  .skip{position:absolute; left:-9999px}
+  .skip:focus{left:12px; top:12px; z-index:99; background:#fff; padding:10px 16px; border-radius:8px; box-shadow:var(--shadow)}
+  :focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px}
+
+  /* ---------- header ---------- */
+  header{position:sticky; top:0; z-index:50; background:rgba(255,255,255,.9);
+    backdrop-filter:saturate(180%) blur(12px); border-bottom:1px solid var(--line)}
+  .bar{display:flex; align-items:center; gap:18px; height:66px}
+  .brand{display:flex; align-items:center; gap:10px; font-weight:650; letter-spacing:-.02em;
+    color:var(--ink); text-decoration:none; font-size:16px}
+  .brand svg{flex:none}
+  nav{margin-left:auto; display:flex; align-items:center; gap:26px}
+  nav a{color:var(--ink-2); text-decoration:none; font-size:15px; font-weight:500}
+  nav a:hover{color:var(--accent-dark)}
+  .btn{display:inline-block; background:var(--accent); color:#fff; text-decoration:none;
+    font-weight:600; font-size:15px; padding:11px 20px; border-radius:10px; border:1px solid var(--accent);
+    transition:background .15s ease}
+  .btn:hover{background:var(--accent-dark); border-color:var(--accent-dark)}
+  .btn-ghost{background:transparent; color:var(--ink); border-color:var(--line)}
+  .btn-ghost:hover{background:var(--bg-2); border-color:#d3d8e0}
+  .btn-lg{padding:14px 26px; font-size:16px}
+  @media(max-width:760px){ nav .navlink{display:none} .bar{height:60px} }
+
+  /* ---------- hero ---------- */
+  .hero{padding:76px 0 64px; border-bottom:1px solid var(--line)}
+  .eyebrow{display:inline-block; font-size:13px; font-weight:600; letter-spacing:.04em;
+    text-transform:uppercase; color:var(--accent-dark); background:var(--accent-tint);
+    padding:6px 13px; border-radius:999px; margin-bottom:22px}
+  .hero h1{font-size:clamp(2.1rem,5.2vw,3.4rem); max-width:16ch}
+  .hero .lede{margin-top:20px; font-size:clamp(1.05rem,2.2vw,1.22rem); color:var(--ink-2); max-width:56ch}
+  .cta-row{display:flex; flex-wrap:wrap; gap:12px; margin-top:32px}
+  .note{margin-top:18px; font-size:14.5px; color:var(--ink-3)}
+
+  /* ---------- generic section ---------- */
+  section{padding:72px 0}
+  .alt{background:var(--bg-2); border-block:1px solid var(--line)}
+  .shead{max-width:60ch; margin-bottom:40px}
+  .shead h2{font-size:clamp(1.55rem,3.4vw,2.1rem)}
+  .shead p{margin-top:14px; color:var(--ink-2)}
+
+  /* ---------- steps ---------- */
+  .steps{display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(232px,1fr))}
+  .step{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:26px 24px; box-shadow:var(--shadow)}
+  .num{display:grid; place-items:center; width:34px; height:34px; border-radius:9px;
+    background:var(--accent-tint); color:var(--accent-dark); font-weight:700; font-size:15px; margin-bottom:16px}
+  .step h3{font-size:1.06rem; margin-bottom:8px}
+  .step p{color:var(--ink-2); font-size:15.5px}
+
+  /* ---------- terms ---------- */
+  .terms{display:grid; gap:0; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:#fff}
+  .term{display:grid; grid-template-columns:26px 1fr; gap:16px; padding:24px 26px; border-bottom:1px solid var(--line)}
+  .term:last-child{border-bottom:0}
+  .term svg{margin-top:3px; color:var(--accent)}
+  .term h3{font-size:1.02rem; margin-bottom:6px}
+  .term p{color:var(--ink-2); font-size:15.5px}
+  @media(max-width:560px){ .term{grid-template-columns:1fr} .term svg{display:none} }
+
+  /* ---------- faq ---------- */
+  .faq{max-width:760px; border-top:1px solid var(--line)}
+  details{border-bottom:1px solid var(--line)}
+  summary{cursor:pointer; list-style:none; padding:20px 42px 20px 0; font-weight:600;
+    font-size:1.02rem; position:relative}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:""; position:absolute; right:8px; top:27px; width:9px; height:9px;
+    border-right:2px solid var(--ink-3); border-bottom:2px solid var(--ink-3);
+    transform:rotate(45deg); transition:transform .2s ease}
+  details[open] summary::after{transform:rotate(-135deg)}
+  details .body{padding:0 0 22px; color:var(--ink-2); font-size:15.5px; max-width:64ch}
+
+  /* ---------- closing cta ---------- */
+  .band{background:var(--accent); color:#fff; border-radius:var(--radius); padding:52px 44px; text-align:center}
+  .band h2{font-size:clamp(1.5rem,3.4vw,2rem)}
+  .band p{margin:14px auto 0; max-width:50ch; color:rgba(255,255,255,.86)}
+  .band .btn{background:#fff; color:var(--accent-dark); border-color:#fff; margin-top:28px}
+  .band .btn:hover{background:#eef6f4; border-color:#eef6f4}
+  @media(max-width:560px){ .band{padding:40px 24px} }
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--line); padding:52px 0 60px; font-size:15px; color:var(--ink-2)}
+  .fgrid{display:flex; flex-wrap:wrap; gap:38px 64px; justify-content:space-between}
+  footer h4{font-size:13px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-3); margin:0 0 12px}
+  footer a{color:var(--ink-2); text-decoration:none}
+  footer a:hover{color:var(--accent-dark); text-decoration:underline}
+  footer ul{list-style:none; margin:0; padding:0; display:grid; gap:9px}
+  .fine{margin-top:44px; padding-top:26px; border-top:1px solid var(--line); font-size:13.5px; color:var(--ink-3); max-width:70ch}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top">
+      <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="#0f6e63"/>
+        <path d="M16 7c-4 0-6.5 3-6.5 6.8V25h13V13.8C22.5 10 20 7 16 7z" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/>
+      </svg>
+      UUFFUNDS
+    </a>
+    <nav>
+      <a class="navlink" href="#how">How it works</a>
+      <a class="navlink" href="#terms">The terms</a>
+      <a class="navlink" href="#faq">FAQ</a>
+      <a class="btn" href="mailto:uuffund@gmail.com?subject=I%27d%20like%20to%20join%20UUFFUNDS">Join the fund</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div id="top"></div>
+
+<!-- ===================== HERO ===================== -->
+<div class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Community mutual aid · [REGION SERVED]</span>
+    <h1>No family should face a funeral bill alone.</h1>
+    <p class="lede">
+      United Ummah Funeral Funds is a member-supported fund. When a member's family
+      loses someone, the cost of the burial is divided across every member — so one
+      family's hardest week doesn't also become their most expensive.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-lg" href="mailto:uuffund@gmail.com?subject=I%27d%20like%20to%20join%20UUFFUNDS">Join the fund</a>
+      <a class="btn btn-lg btn-ghost" href="#how">See how it works</a>
+    </div>
+    <p class="note">Serving [REGION SERVED]. Membership is open to [ELIGIBILITY — e.g. any Muslim household in the area].</p>
+  </div>
+</div>
+
+<!-- ===================== WHY ===================== -->
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <h2>Burial comes first. The bill shouldn't.</h2>
+      <p>
+        In our tradition, burial happens quickly — often within a day. That leaves no
+        time to fundraise, apply for assistance, or wait on a decision. Families are
+        asked for [TYPICAL FUNERAL COST] at the exact moment they are least able to
+        think about money.
+      </p>
+      <p style="margin-top:14px">
+        UUFFUNDS exists so that money is already there. Not as charity, and not as
+        insurance — as a standing agreement between neighbours to carry each other's
+        costs.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOW IT WORKS ===================== -->
+<section class="alt" id="how">
+  <div class="wrap">
+    <div class="shead">
+      <h2>How it works</h2>
+      <p>Four steps, and nothing hidden in between.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>You join</h3>
+        <p>One household, one membership. You register your details and a payment
+           method, and you are covered from [WHEN COVERAGE BEGINS].</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>A death is reported</h3>
+        <p>The family, or the funeral home acting for them, notifies the fund.
+           Paperwork such as a death certificate or burial permit can be supplied
+           by the funeral home, but is not required before the fund acts — burial
+           is never delayed waiting on documents.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>The cost is split</h3>
+        <p>The funeral cost is divided across all active members. Each member is
+           charged their share — roughly [SHARE PER FUNERAL] — for that funeral.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h3>The bill gets paid</h3>
+        <p>Funds go to [THE FUNERAL HOME / THE FAMILY] directly. No claim forms
+           for the family to file, and no reimbursement to chase.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HONEST TERMS ===================== -->
+<section id="terms">
+  <div class="wrap">
+    <div class="shead">
+      <h2>What you're agreeing to</h2>
+      <p>
+        This is a shared obligation, not a policy you buy. Please read this part
+        carefully before you join — we would rather you join knowing exactly how it
+        works than leave when the first charge arrives.
+      </p>
+    </div>
+    <div class="terms">
+      <div class="term">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 8v5M12 16.5v.5"/><circle cx="12" cy="12" r="9"/></svg>
+        <div>
+          <h3>You are charged per funeral, not per month</h3>
+          <p>There is no fixed monthly fee and no cap on how often a charge can come.
+             Each death is a separate request. In a difficult month there may be
+             several; in a quiet month, none at all.</p>
+        </div>
+      </div>
+      <div class="term">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 8v5M12 16.5v.5"/><circle cx="12" cy="12" r="9"/></svg>
+        <div>
+          <h3>If someone's payment fails, the rest of us cover it</h3>
+          <p>When a member's payment does not go through, their share is redistributed
+             across the remaining members. This is what keeps the family whole, and it
+             means your share can end up slightly higher than the original estimate.</p>
+        </div>
+      </div>
+      <div class="term">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 8v5M12 16.5v.5"/><circle cx="12" cy="12" r="9"/></svg>
+        <div>
+          <h3>Your share shrinks as the fund grows</h3>
+          <p>The cost is divided by the number of active members. The larger the
+             membership, the smaller each individual share becomes.</p>
+        </div>
+      </div>
+      <div class="term">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 8v5M12 16.5v.5"/><circle cx="12" cy="12" r="9"/></svg>
+        <div>
+          <h3>This is mutual aid, not insurance</h3>
+          <p>UUFFUNDS is not an insurance product and carries no regulatory guarantee.
+             What it offers is a community commitment. [CHARITY STATUS — state your
+             registration status here, or say plainly that you are not yet registered.]</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="alt" id="faq">
+  <div class="wrap">
+    <div class="shead"><h2>Questions</h2></div>
+    <div class="faq">
+      <details>
+        <summary>How much will I actually pay?</summary>
+        <div class="body">Roughly [SHARE PER FUNERAL] each time the fund covers a
+        funeral. The exact amount depends on the cost of that funeral and how many
+        members are active at the time.</div>
+      </details>
+      <details>
+        <summary>Who does the fund cover in my household?</summary>
+        <div class="body">[DEFINE THIS CAREFULLY — e.g. the member, spouse, and
+        dependent children living at the same address. State any age limits and
+        whether parents or extended family can be added.]</div>
+      </details>
+      <details>
+        <summary>Is there a waiting period after I join?</summary>
+        <div class="body">[STATE YOUR WAITING PERIOD, if any. Most funds have one to
+        prevent people joining only after a death. If you have none, say so.]</div>
+      </details>
+      <details>
+        <summary>What exactly does the payment cover?</summary>
+        <div class="body">[LIST WHAT IS INCLUDED — e.g. ghusl and kafan, transport,
+        the plot, the funeral home's fee — and what is not, such as travel for
+        relatives or repatriation abroad.]</div>
+      </details>
+      <details>
+        <summary>Is this permissible under Islamic law?</summary>
+        <div class="body">Mutual aid of this kind — members donating to cover one
+        another's costs, with no interest and no premium paid for a promise of
+        payout — is widely distinguished from conventional insurance.
+        [SCHOLAR REVIEW — name the scholar or council who reviewed this structure,
+        only if they have actually agreed to be named.]</div>
+      </details>
+      <details>
+        <summary>What happens if I need to leave?</summary>
+        <div class="body">[STATE HOW A MEMBER CANCELS, whether any charge already
+        issued still stands, and whether coverage ends immediately.]</div>
+      </details>
+      <details>
+        <summary>Who runs the fund, and who sees the money?</summary>
+        <div class="body">[NAME THE ADMINISTRATORS AND DESCRIBE OVERSIGHT — who
+        approves a request, who can move funds, and how members can review the
+        accounts. This is the question that decides whether people trust you.]</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CLOSING CTA ===================== -->
+<section>
+  <div class="wrap">
+    <div class="band">
+      <h2>Join before you need it</h2>
+      <p>The fund only works because people sign up while things are calm. Send us a
+         note and we'll walk you through it.</p>
+      <a class="btn btn-lg" href="mailto:uuffund@gmail.com?subject=I%27d%20like%20to%20join%20UUFFUNDS">Email us to join</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div style="max-width:34ch">
+        <a class="brand" href="#top" style="margin-bottom:12px">
+          <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true">
+            <rect width="32" height="32" rx="8" fill="#0f6e63"/>
+            <path d="M16 7c-4 0-6.5 3-6.5 6.8V25h13V13.8C22.5 10 20 7 16 7z" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/>
+          </svg>
+          UUFFUNDS
+        </a>
+        <p style="font-size:15px; color:var(--ink-3)">United Ummah Funeral Funds — a
+        member-supported fund for burial costs in [REGION SERVED].</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#terms">The terms</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:uuffund@gmail.com">uuffund@gmail.com</a></li>
+          <li>[PHONE]</li>
+          <li>[MAILING ADDRESS]</li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">
+      [LEGAL NAME] · [CHARITY STATUS]. UUFFUNDS is a mutual aid arrangement between
+      members, not an insurance product, and no payout is guaranteed by any regulator.
+      Membership terms are set out in full at [LINK TO MEMBERSHIP AGREEMENT].
+      © <span id="yr">2026</span> United Ummah Funeral Funds.
+    </p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
